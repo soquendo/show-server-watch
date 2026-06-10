@@ -25,8 +25,8 @@ function LiveSignals() {
   return (
     <section className="dashboard-panel">
       <div className="section-title">
-        <h2>Live Signals</h2>
-        <p>Signals used to estimate current server health.</p>
+        <h2>Evidence</h2>
+        <p>Signals currently shaping the status estimate.</p>
       </div>
 
       <div className="signal-grid">

@@ -193,6 +193,8 @@ article p {
 
   .status-ring {
     margin: 0 auto;
+    box-shadow: 0 0 40px color-mix(in srgb, var(--theme-color) 35%, transparent);
+    /* box-shadow: 0 0 40px rgba(251, 191, 36, 0.25); */
   }
 }
 
@@ -258,7 +260,7 @@ article p {
 
 .card-footer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin-top: 20px;
   padding-top: 14px;
@@ -392,23 +394,8 @@ article p {
 }
 
 .service-accent {
-  background: #94a3b8;
-}
-
-.service-card.operational .service-accent {
-  background: #4ade80;
-}
-
-.service-card.degraded .service-accent {
-  background: #fbbf24;
-}
-
-.service-card.major-outage .service-accent {
-  background: #f87171;
-}
-
-.service-card.unknown .service-accent {
-  background: #94a3b8;
+  background: var(--theme-color);
+  transition: background 0.35s ease;
 }
 
 .service-content {
@@ -434,4 +421,31 @@ article p {
   color: #fbbf24;
   font-size: 1.45rem;
   letter-spacing: 0.08em;
+}
+
+.app-shell {
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* -------------------- */
+/* Dynamic Theme States */
+/* -------------------- */
+
+.app-shell.operational {
+  --theme-color: #22c55e;
+}
+
+.app-shell.degraded {
+  --theme-color: #fbbf24;
+}
+
+.app-shell.major-outage {
+  --theme-color: #ef4444;
+}
+
+.app-shell.unknown {
+  --theme-color: #94a3b8;
 }

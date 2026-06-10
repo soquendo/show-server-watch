@@ -9,7 +9,7 @@ function ModeCard({ mode }) {
 
       <div className="service-content">
         <div className="service-card-header">
-          <h3>{mode.name}</h3>
+          <h3>{mode.displayName}</h3>
           <span className={`status-pill ${statusClass}`}>
             {mode.status}
           </span>
@@ -17,18 +17,23 @@ function ModeCard({ mode }) {
 
         <div className="risk-block">
           <span>Player Risk</span>
-          <strong>{getRiskStars(mode.impact)}</strong>
+          <strong>{getRiskStars(mode.playerRisk)}</strong>
         </div>
 
         <div className="card-footer">
           <div>
-            <span>Impact</span>
-            <strong>{mode.impact}</strong>
+            <span>Reports</span>
+            <strong>{mode.reports}</strong>
+          </div>
+
+          <div>
+            <span>Confidence</span>
+            <strong>{mode.confidence}%</strong>
           </div>
 
           <div>
             <span>Last Signal</span>
-            <strong>2m ago</strong>
+            <strong>{mode.lastSignalMinutes}m ago</strong>
           </div>
         </div>
       </div>

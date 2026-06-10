@@ -5,10 +5,13 @@ import ModeCard from './components/ModeCard'
 import LiveSignals from './components/LiveSignals'
 import { overallStatus, onlineModes } from './data/statusData'
 import EventLog from './components/EventLog'
+import { getStatusClass } from './utils/statusUtils'
 
 function App() {
+  const appStatusClass = getStatusClass(overallStatus.status)
+
   return (
-    <main>
+    <main className={`app-shell ${appStatusClass}`}>
       <section className="hero-dashboard">
         <StatusRing status={overallStatus} />
 
@@ -23,8 +26,8 @@ function App() {
 
       <section className="dashboard-panel">
         <div className="section-title">
-          <h2>Game Services</h2>
-          <p>Mode-specific risk based on server signals.</p>
+          <h2>Services</h2>
+          <p>Current reported status by service.</p>
         </div>
 
         <div className="service-grid">
