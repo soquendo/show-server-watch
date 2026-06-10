@@ -1,16 +1,84 @@
-# React + Vite
+# The Show Server Watch
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Community-informed service status concept for MLB The Show.
 
-Currently, two official plugins are available:
+![ The Show Server Watch Dashboard ] (screenshots/dashboard.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Purpose
 
-## React Compiler
+When MLB The Show displays connection errors such as “User Offline” or “Game Not Connected,” players often have no quick way to tell whether the issue is local or part of a wider server problem.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The Show Server Watch is a React dashboard concept designed to centralize reported service status, affected modes, confidence levels, and recent signal changes in one place.
 
-## Expanding the ESLint configuration
+# Core Questions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This dashboard is built to answer four questions quickly:
+
+1. Are the servers currently having issues?
+2. Which services or online modes appear affected?
+3. How confident is the current status estimate?
+4. What changed recently?
+
+# Current Features
+
+* Overall server status indicator
+* Status-driven visual theme
+* Service breakdown by online mode
+* Player risk display
+* Confidence and report counts
+* Evidence section
+* Event log for recent signal changes
+* Modular React component structure
+
+# Online Services Tracked
+
+* Ranked
+* Events
+* Battle Royale
+* Co-op
+* Marketplace
+* Companion App
+
+# Tech Stack
+
+* React
+* Vite
+* JavaScript
+* CSS
+* Component-based architecture
+
+# Project Structure:
+src/
+├── components/
+├── constants/
+├── data/
+├── utils/
+├── App.jsx
+└── App.css
+
+# Future Roadmap
+
+v1.1
+
+* Auto-generated timestamps
+* Derived overall status from service data
+* Improved mobile layout
+* More detailed evidence scoring
+
+v1.2
+
+* Live data source integration
+* Official SDS update tracking
+* Platform-specific status indicators
+* Historical outage timeline
+
+v2.0
+
+* Public API endpoint
+* Notification support
+* Historical reliability metrics
+* Embeddable status widget
+
+# Project Goal
+
+This project is designed as a product-focused frontend prototype that could fit naturally into an MLB The Show companion site such as ShowZone. It focuses on solving a real player problem with a clean interface, structured data, and maintainable React architecture.
