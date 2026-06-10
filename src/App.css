@@ -382,3 +382,56 @@ article p {
   margin: 0;
   color: #94a3b8;
 }
+
+.service-card {
+  display: grid;
+  grid-template-columns: 5px 1fr;
+  gap: 0;
+  padding: 0;
+  min-height: 176px;
+}
+
+.service-accent {
+  background: #94a3b8;
+}
+
+.service-card.operational .service-accent {
+  background: #4ade80;
+}
+
+.service-card.degraded .service-accent {
+  background: #fbbf24;
+}
+
+.service-card.major-outage .service-accent {
+  background: #f87171;
+}
+
+.service-card.unknown .service-accent {
+  background: #94a3b8;
+}
+
+.service-content {
+  padding: 18px;
+}
+
+.risk-block {
+  margin-top: 20px;
+}
+
+.risk-block span {
+  display: block;
+  color: #64748b;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.risk-block strong {
+  display: block;
+  margin-top: 6px;
+  color: #fbbf24;
+  font-size: 1.45rem;
+  letter-spacing: 0.08em;
+}

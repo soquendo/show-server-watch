@@ -34,8 +34,9 @@ function App() {
         </div>
       </section>
 
-      <LiveSignals />
       <EventLog />
+      <LiveSignals />
+      
     </main>
   )
 }

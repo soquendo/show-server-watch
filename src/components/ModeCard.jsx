@@ -1,34 +1,35 @@
-function getStatusClass(status) {
-  return status.toLowerCase().replaceAll(" ", "-")
-}
-
-function getStars(impact) {
-  if (impact === "High") return "★★★★★"
-  if (impact === "Medium") return "★★★☆☆"
-  return "★☆☆☆☆"
-}
+import { getStatusClass, getRiskStars } from "../utils/statusUtils"
 
 function ModeCard({ mode }) {
+  const statusClass = getStatusClass(mode.status)
+
   return (
-    <article className={`service-card ${getStatusClass(mode.status)}`}>
-      <div className="service-card-header">
-        <h3>{mode.name}</h3>
-        <span className={`status-pill ${getStatusClass(mode.status)}`}>
-          {mode.status}
-        </span>
-      </div>
+    <article className={`service-card ${statusClass}`}>
+      <div className="service-accent"></div>
 
-      <p className="card-label">Player Risk</p>
-      <p className="risk-stars">{getStars(mode.impact)}</p>
-
-      <div className="card-footer">
-        <div>
-          <span>Impact</span>
-          <strong>{mode.impact}</strong>
+      <div className="service-content">
+        <div className="service-card-header">
+          <h3>{mode.name}</h3>
+          <span className={`status-pill ${statusClass}`}>
+            {mode.status}
+          </span>
         </div>
-        <div>
-          <span>Last Signal</span>
-          <strong>2m ago</strong>
+
+        <div className="risk-block">
+          <span>Player Risk</span>
+          <strong>{getRiskStars(mode.impact)}</strong>
+        </div>
+
+        <div className="card-footer">
+          <div>
+            <span>Impact</span>
+            <strong>{mode.impact}</strong>
+          </div>
+
+          <div>
+            <span>Last Signal</span>
+            <strong>2m ago</strong>
+          </div>
         </div>
       </div>
     </article>
