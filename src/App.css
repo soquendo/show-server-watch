@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   background:
@@ -13,14 +19,14 @@ body {
 }
 
 main {
-  width: min(1180px, 94vw);
+  width: min(1100px, calc(100vw - 48px));
   margin: 0 auto;
   padding: 48px 0;
 }
 
 .hero-dashboard {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 280px minmax(0, 1fr);
   gap: 48px;
   align-items: center;
   margin-bottom: 28px;
@@ -83,9 +89,10 @@ main {
 
 h1 {
   margin: 0;
-  font-size: clamp(3.8rem, 8vw, 6.5rem);
+  font-size: clamp(3.2rem, 7vw, 5.6rem);
   line-height: 0.88;
   text-transform: uppercase;
+  max-width: 100%;
 }
 
 .hero-copy > p:last-of-type {
@@ -267,4 +274,111 @@ article p {
 
 .card-footer strong {
   color: #f8fafc;
+}
+
+.signal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.signal-card {
+  min-height: 110px;
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(2, 6, 23, 0.54);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  text-align: left;
+}
+
+.signal-card h3 {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+}
+
+.signal-card p {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.signal-card.good {
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.signal-card.warning {
+  border-color: rgba(251, 191, 36, 0.35);
+}
+
+.signal-card.danger {
+  border-color: rgba(248, 113, 113, 0.35);
+}
+
+.signal-card.neutral {
+  border-color: rgba(148, 163, 184, 0.22);
+}
+
+@media (max-width: 900px) {
+  .signal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mode-note {
+  min-height: 42px;
+  color: #94a3b8;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.event-log {
+  display: grid;
+  gap: 0;
+}
+
+.event-item {
+  display: grid;
+  grid-template-columns: 16px 90px 1fr;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  align-items: start;
+}
+
+.event-item:last-child {
+  border-bottom: 0;
+}
+
+.event-dot {
+  width: 10px;
+  height: 10px;
+  margin-top: 7px;
+  border-radius: 50%;
+  background: #94a3b8;
+}
+
+.event-item.good .event-dot {
+  background: #4ade80;
+}
+
+.event-item.warning .event-dot {
+  background: #fbbf24;
+}
+
+.event-item.danger .event-dot {
+  background: #f87171;
+}
+
+.event-time {
+  color: #cbd5e1;
+  font-weight: 800;
+}
+
+.event-item h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.event-item p {
+  margin: 0;
+  color: #94a3b8;
 }

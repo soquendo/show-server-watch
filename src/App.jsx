@@ -2,7 +2,9 @@ import './App.css'
 import StatusRing from './components/StatusRing'
 import TopMetrics from './components/TopMetrics'
 import ModeCard from './components/ModeCard'
+import LiveSignals from './components/LiveSignals'
 import { overallStatus, onlineModes } from './data/statusData'
+import EventLog from './components/EventLog'
 
 function App() {
   return (
@@ -31,6 +33,9 @@ function App() {
           ))}
         </div>
       </section>
+
+      <LiveSignals />
+      <EventLog />
     </main>
   )
 }

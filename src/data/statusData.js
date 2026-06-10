@@ -9,7 +9,7 @@ export const overallStatus = {
 export const onlineModes = [
   {
     id: 1,
-    name: "Ranked / Weekend Classic",
+    name: "Ranked",
     status: "Degraded",
     impact: "High",
   },
