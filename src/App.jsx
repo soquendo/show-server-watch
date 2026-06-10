@@ -1,22 +1,35 @@
 import './App.css'
-import Header from './components/Header'
-import StatusCard from './components/StatusCard'
+import StatusRing from './components/StatusRing'
+import TopMetrics from './components/TopMetrics'
 import ModeCard from './components/ModeCard'
 import { overallStatus, onlineModes } from './data/statusData'
 
 function App() {
   return (
     <main>
-      <Header />
+      <section className="hero-dashboard">
+        <StatusRing status={overallStatus} />
 
-      <StatusCard overallStatus={overallStatus} />
+        <div className="hero-copy">
+          <p className="eyebrow">The Show</p>
+          <h1>Server Watch</h1>
+          <p>Real-time server intelligence for MLB The Show.</p>
 
-      <section>
-        <h2>Online Mode Impact</h2>
+          <TopMetrics status={overallStatus} />
+        </div>
+      </section>
 
-        {onlineModes.map((mode) => (
-          <ModeCard key={mode.id} mode={mode} />
-        ))}
+      <section className="dashboard-panel">
+        <div className="section-title">
+          <h2>Game Services</h2>
+          <p>Mode-specific risk based on server signals.</p>
+        </div>
+
+        <div className="service-grid">
+          {onlineModes.map((mode) => (
+            <ModeCard key={mode.id} mode={mode} />
+          ))}
+        </div>
       </section>
     </main>
   )
