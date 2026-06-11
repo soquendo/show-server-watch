@@ -2,6 +2,12 @@ import { STATUS } from "../constants/status"
 
 export const scenarios = {
   operational: {
+    metadata: {
+        name: "Operational",
+        generatedBy: "Scenario Engine",
+        environment: "Mock",
+    },
+
     overallStatus: {
       status: STATUS.OPERATIONAL,
       confidence: 99,
@@ -22,6 +28,12 @@ export const scenarios = {
   },
 
   degraded: {
+    metadata: {
+        name: "Degraded",
+        generatedBy: "Scenario Engine",
+        environment: "Mock",
+    },
+
     overallStatus: {
       status: STATUS.DEGRADED,
       confidence: 96,
@@ -161,6 +173,13 @@ export const scenarios = {
   },
 
   majorOutage: {
+    
+    metadata: {
+        name: "Major Outage",
+        generatedBy: "Scenario Engine",
+        environment: "Mock",
+    },
+    
     overallStatus: {
       status: STATUS.MAJOR_OUTAGE,
       confidence: 98,
