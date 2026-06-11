@@ -88,8 +88,60 @@ export const scenarios = {
             officialStatement: false,
         }
     ],
-    eventLog: [],
-    evidence: {},
+
+    eventLog: [
+        {
+            time: "3:48 AM",
+            status: "warning",
+            title: "Community reports increasing",
+            detail: "Players reporting login and online connection issues.",
+        },
+        {
+            time: "3:45 AM",
+            status: "danger",
+            title: "Ranked and Battle Royale affected",
+            detail: "Elevated reports tied to competitive online modes.",
+        },
+        {
+            time: "3:42 AM",
+            status: "good",
+            title: "Marketplace responding normally",
+            detail: "No major marketplace issue detected from current signals.",
+        },
+        {
+            time: "3:39 AM",
+            status: "neutral",
+            title: "No official SDS update detected",
+            detail: "Official channels have not posted a new server notice.",
+        },
+    ],
+
+    
+    evidence: [
+        {
+            name: "Official SDS Channels",
+            status: "No recent updates",
+            level: "neutral",
+        },
+
+        {
+            name: "Community Reports",
+            status: "Strong signal",
+            level: "danger",
+        },
+
+        {
+            name: "Marketplace",
+            status: "Operational",
+            level: "good",
+        },
+
+        {
+            name: "Companion App",
+            status: "Issues reported",
+            level: "warning",
+        },
+    ],
   },
 
   majorOutage: {
@@ -101,6 +153,6 @@ export const scenarios = {
     },
     services: [],
     eventLog: [],
-    evidence: {},
+    evidence: [],
   },
 }

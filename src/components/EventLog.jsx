@@ -1,31 +1,4 @@
-const events = [
-  {
-    time: "3:48 AM",
-    status: "warning",
-    title: "Community reports increasing",
-    detail: "Players reporting login and online connection issues.",
-  },
-  {
-    time: "3:45 AM",
-    status: "danger",
-    title: "Ranked and Battle Royale affected",
-    detail: "Elevated reports tied to competitive online modes.",
-  },
-  {
-    time: "3:42 AM",
-    status: "good",
-    title: "Marketplace responding normally",
-    detail: "No major marketplace issue detected from current signals.",
-  },
-  {
-    time: "3:39 AM",
-    status: "neutral",
-    title: "No official SDS update detected",
-    detail: "Official channels have not posted a new server notice.",
-  },
-]
-
-function EventLog() {
+function EventLog({ events }) {
   return (
     <section className="dashboard-panel">
       <div className="section-title">

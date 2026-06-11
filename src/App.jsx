@@ -40,8 +40,8 @@ function App() {
         </div>
       </section>
 
-      <EventLog />
-      <LiveSignals />
+      <EventLog events={currentScenario.eventLog} />
+      <LiveSignals evidence={currentScenario.evidence} />
       
     </main>
   )

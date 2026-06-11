@@ -1,27 +1,4 @@
-const signals = [
-  {
-    name: "Official SDS Channels",
-    status: "No recent updates",
-    level: "neutral",
-  },
-  {
-    name: "Community Reports",
-    status: "Strong signal",
-    level: "danger",
-  },
-  {
-    name: "Marketplace",
-    status: "Operational",
-    level: "good",
-  },
-  {
-    name: "Companion App",
-    status: "Issues reported",
-    level: "warning",
-  },
-]
-
-function LiveSignals() {
+function LiveSignals({ evidence }) {
   return (
     <section className="dashboard-panel">
       <div className="section-title">
@@ -30,8 +7,11 @@ function LiveSignals() {
       </div>
 
       <div className="signal-grid">
-        {signals.map((signal) => (
-          <article className={`signal-card ${signal.level}`} key={signal.name}>
+        {evidence.map((signal) => (
+          <article
+            className={`signal-card ${signal.level}`}
+            key={signal.name}
+          >
             <h3>{signal.name}</h3>
             <p>{signal.status}</p>
           </article>
