@@ -1,0 +1,106 @@
+import { STATUS } from "../constants/status"
+
+export const scenarios = {
+  operational: {
+    overallStatus: {
+      status: STATUS.OPERATIONAL,
+      confidence: 99,
+      updated: "Today • 4:15 PM EST",
+      summary: "No widespread service issues detected.",
+    },
+    services: [],
+    eventLog: [],
+    evidence: {},
+  },
+
+  degraded: {
+    overallStatus: {
+      status: STATUS.DEGRADED,
+      confidence: 96,
+      updated: "Today • 3:48 AM EST",
+      summary: "Elevated community reports across online services.",
+    },
+    services: [
+        {
+            id: 1,
+            service: "ranked",
+            displayName: "Ranked",
+            status: STATUS.DEGRADED,
+            playerRisk: "High",
+            confidence: 94,
+            lastSignalMinutes: 2,
+            reports: 147,
+            officialStatement: false,
+        },
+        {
+            id: 2,
+            service: "events",
+            displayName: "Events",
+            status: STATUS.OPERATIONAL,
+            playerRisk: "Low",
+            confidence: 82,
+            lastSignalMinutes: 8,
+            reports: 12,
+            officialStatement: false,
+        },
+        {
+            id: 3,
+            service: "battle-royale",
+            displayName: "Battle Royale",
+            status: STATUS.DEGRADED,
+            playerRisk: "High",
+            confidence: 91,
+            lastSignalMinutes: 3,
+            reports: 132,
+            officialStatement: false,
+        },
+        {
+            id: 4,
+            service: "co-op",
+            displayName: "Co-op",
+            status: STATUS.UNKNOWN,
+            playerRisk: "Medium",
+            confidence: 48,
+            lastSignalMinutes: 18,
+            reports: 21,
+            officialStatement: false,
+        },
+        {
+            id: 5,
+            service: "marketplace",
+            displayName: "Marketplace",
+            status: STATUS.OPERATIONAL,
+            playerRisk: "Low",
+            confidence: 88,
+            lastSignalMinutes: 5,
+            reports: 9,
+            officialStatement: false,
+        },
+        {
+            id: 6,
+            service: "companion-app",
+            displayName: "Companion App",
+            status: STATUS.UNKNOWN,
+            playerRisk: "Low",
+            confidence: 52,
+            lastSignalMinutes: 14,
+            reports: 18,
+            officialStatement: false,
+        }
+    ],
+    eventLog: [],
+    evidence: {},
+  },
+
+  majorOutage: {
+    overallStatus: {
+      status: STATUS.MAJOR_OUTAGE,
+      confidence: 98,
+      updated: "Today • 3:52 AM EST",
+      summary: "Widespread connection issues detected across core online services.",
+    },
+    services: [],
+    eventLog: [],
+    evidence: {},
+  },
+}

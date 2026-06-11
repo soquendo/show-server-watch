@@ -3,11 +3,14 @@ import StatusRing from './components/StatusRing'
 import TopMetrics from './components/TopMetrics'
 import ModeCard from './components/ModeCard'
 import LiveSignals from './components/LiveSignals'
-import { overallStatus, onlineModes } from './data/statusData'
+import { scenarios } from './data/scenarios'
 import EventLog from './components/EventLog'
 import { getStatusClass } from './utils/statusUtils'
 
 function App() {
+  const currentScenario = scenarios.degraded
+  const overallStatus = currentScenario.overallStatus
+  const onlineModes = currentScenario.services
   const appStatusClass = getStatusClass(overallStatus.status)
 
   return (
