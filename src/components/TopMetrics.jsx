@@ -1,24 +1,28 @@
-function TopMetrics({ status }) {
+function TopMetrics({ metrics }) {
+  const officialStatus = metrics.officialIncident
+    ? "Incident reported"
+    : "No official statement"
+
   return (
     <section className="top-metrics">
       <div className="metric">
         <span className="metric-label">Last Updated</span>
-        <strong>{status.updated}</strong>
+        <strong>{metrics.lastUpdated}</strong>
       </div>
 
       <div className="metric">
-        <span className="metric-label">Confidence</span>
-        <strong>{status.confidence}</strong>
+        <span className="metric-label">Affected Services</span>
+        <strong>{metrics.affectedServices}</strong>
       </div>
 
       <div className="metric">
         <span className="metric-label">Official Status</span>
-        <strong>No official statement</strong>
+        <strong>{officialStatus}</strong>
       </div>
 
       <div className="metric">
-        <span className="metric-label">Community Reports</span>
-        <strong>Strong signal</strong>
+        <span className="metric-label">Total Reports</span>
+        <strong>{metrics.totalReports}</strong>
       </div>
     </section>
   )

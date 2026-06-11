@@ -8,9 +8,17 @@ export const scenarios = {
       updated: "Today • 4:15 PM EST",
       summary: "No widespread service issues detected.",
     },
+
+    metrics: {
+        totalReports: 0,
+        affectedServices: 0,
+        officialIncident: false,
+        lastUpdated: "Today • 4:15 PM EST",
+    },
+
     services: [],
     eventLog: [],
-    evidence: {},
+    evidence: [],
   },
 
   degraded: {
@@ -20,6 +28,14 @@ export const scenarios = {
       updated: "Today • 3:48 AM EST",
       summary: "Elevated community reports across online services.",
     },
+
+    metrics: {
+        totalReports: 339,
+        affectedServices: 2,
+        officialIncident: false,
+        lastUpdated: "Today • 3:48 AM EST",
+    },
+
     services: [
         {
             id: 1,
@@ -151,6 +167,14 @@ export const scenarios = {
       updated: "Today • 3:52 AM EST",
       summary: "Widespread connection issues detected across core online services.",
     },
+
+    metrics: {
+        totalReports: 812,
+        affectedServices: 4,
+        officialIncident: false,
+        lastUpdated: "Today • 3:52 AM EST",
+    },
+
     services: [],
     eventLog: [],
     evidence: [],

@@ -3,12 +3,12 @@ import StatusRing from './components/StatusRing'
 import TopMetrics from './components/TopMetrics'
 import ModeCard from './components/ModeCard'
 import LiveSignals from './components/LiveSignals'
-import { scenarios } from './data/scenarios'
+import { getCurrentScenario } from './utils/getCurrentScenario'
 import EventLog from './components/EventLog'
 import { getStatusClass } from './utils/statusUtils'
 
 function App() {
-  const currentScenario = scenarios.degraded
+  const currentScenario = getCurrentScenario()
   const overallStatus = currentScenario.overallStatus
   const onlineModes = currentScenario.services
   const appStatusClass = getStatusClass(overallStatus.status)
@@ -23,7 +23,7 @@ function App() {
           <h1>Server Watch</h1>
           <p>Real-time server intelligence for MLB The Show.</p>
 
-          <TopMetrics status={overallStatus} />
+          <TopMetrics metrics={currentScenario.metrics} />
         </div>
       </section>
 
